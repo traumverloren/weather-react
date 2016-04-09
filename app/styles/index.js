@@ -17,7 +17,8 @@ var styles = {
 
   yellowBg: {
     background: 'rgba(25, 25, 25, .3)',
-    fontFamily: 'Sacramento'
+    fontFamily: 'Sacramento',
+    paddingBottom: '20px'
   },
 
   flexContainer: {
