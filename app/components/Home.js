@@ -13,11 +13,10 @@ var Home = React.createClass({
               <div className="form-group">
                 <input className="form-control"
                        placeholder="City, State"
-                       type="text"
-                       style={{fontFamily: 'Quicksand'}} />
+                       type="text" />
               </div>
               <div className="form-group">
-                <button className="btn btn-success" style={{fontFamily: 'Quicksand'}}>Get Weather</button>
+                <button className="btn btn-success">Get Weather</button>
               </div>
             </form>
           </div>

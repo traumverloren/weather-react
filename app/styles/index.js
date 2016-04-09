@@ -26,7 +26,8 @@ var styles = {
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
+    fontFamily: 'Quicksand'
   }
 };
 
