@@ -13,7 +13,7 @@ var Main = React.createClass({
             <input className="form-control"
                    placeholder="Amsterdam, NL"
                    type="text" />
-                 <button className="btn btn-success" style={{margin: '10px'}}>Get Weather</button>
+            <button className="btn btn-success" style={{margin: '10px'}}>Get Weather</button>
           </div>
         </div>
         {this.props.children}
