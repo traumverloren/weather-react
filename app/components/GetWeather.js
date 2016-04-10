@@ -1,8 +1,14 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 var jumbotron = require('../styles').jumbotron;
 var flexContainer = require('../styles').flexContainer;
 
 var GetWeather = React.createClass({
+  propTypes: {
+    onSubmitLocation: PropTypes.func.isRequired,
+    onUpdateLocation: PropTypes.func.isRequired,
+    location: PropTypes.string.isRequired
+  },
   render: function() {
     return (
       <div className="jumbotron col-xs-8 text-center" style={jumbotron}>
@@ -24,7 +30,6 @@ var GetWeather = React.createClass({
       </div>
     );
   }
-
 });
 
 module.exports = GetWeather;

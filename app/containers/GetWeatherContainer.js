@@ -16,11 +16,9 @@ var GetWeatherContainer = React.createClass({
 
   handleSubmitLocation: function (e) {
     e.preventDefault();
-    var location = this.state.location;
     this.setState({
       location: ''
     });
-    console.log(location);
   },
 
   render: function () {
