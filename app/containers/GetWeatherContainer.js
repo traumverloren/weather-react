@@ -17,7 +17,7 @@ var GetWeatherContainer = React.createClass({
 
   handleSubmitLocation: function (e) {
     console.log(this.state.location);
-    openWeatherHelpers.getCurrentWeather(this.state.location);
+    // openWeatherHelpers.getCurrentWeather(this.state.location);
     openWeatherHelpers.getForecast(this.state.location);
     e.preventDefault();
     this.setState({

@@ -1,6 +1,6 @@
 var styles = {
   mainContainer: {
-    height: '92%',
+    height: '93%',
     width: '100%'
   },
 
