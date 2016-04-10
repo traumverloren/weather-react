@@ -2,18 +2,17 @@ var React = require('react');
 var mainContainer = require('../styles').mainContainer;
 var mainHeader = require('../styles').mainHeader;
 var headerInput = require('../styles').headerInput;
+var GetWeatherContainer = require('../containers/GetWeatherContainer');
+
 
 var Main = React.createClass({
   render: function () {
     return (
       <div style={mainContainer}>
         <div style={mainHeader}>
-          <h2 style={{color: 'white'}}>Weather-React</h2>
+          <h3 style={{color: 'white'}}>Weather-React</h3>
           <div style={headerInput}>
-            <input className="form-control"
-                   placeholder="Amsterdam, NL"
-                   type="text" />
-            <button className="btn btn-success" style={{margin: '10px'}}>Get Weather</button>
+            <GetWeatherContainer />
           </div>
         </div>
         {this.props.children}

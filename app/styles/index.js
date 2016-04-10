@@ -14,11 +14,10 @@ var styles = {
   },
 
   headerInput: {
-    display: 'flex',
+    display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row',
-    maxWidth: '300px'
+    flexDirection: 'row'
   },
 
   homeBg: {
