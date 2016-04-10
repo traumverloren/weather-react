@@ -11,8 +11,8 @@ function GetWeather (props) {
              type="text"
              value={props.location}
              onChange={props.onUpdateLocation}
-             style={{maxWidth: '120px', display: 'inline-block'}} />
-           <button className="btn btn-success" style={{margin: '10px', display: 'inline-block'}}>Get Weather</button>
+             style={{maxWidth: '108px', display: 'inline-block'}} />
+           <button className="btn btn-success" style={{margin: '10px', display: 'inline-block'}}><i className="fa fa-search"></i></button>
     </form>
   )
 }

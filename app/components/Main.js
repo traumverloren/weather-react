@@ -10,7 +10,7 @@ var Main = React.createClass({
     return (
       <div style={mainContainer}>
         <div style={mainHeader}>
-          <h3 style={{color: 'white'}}>Weather-React</h3>
+          <h4 style={{color: 'white'}}>Weather-React</h4>
           <div style={headerInput}>
             <GetWeatherContainer />
           </div>
