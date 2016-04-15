@@ -7,14 +7,14 @@ var helpers = {
   getCurrentWeather: function (location) {
     return axios.get(base_url + "weather?q=" + location + "&type=accurate&APPID=" + key)
     .then(function (currentData) {
-      console.log("currentData", currentData.data);
+      return currentData.data;
     })
   },
 
   getForecast: function (location) {
     return axios.get(base_url + "forecast/daily?q=" + location + "&type=accurate&APPID=" + key + "&cnt=5")
     .then(function (forecastData) {
-      console.log("forecastData", forecastData.data);
+      return forecastData.data;
     })
   }
 };
