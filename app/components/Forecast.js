@@ -1,4 +1,5 @@
 var React = require('react');
+var Loading = require('../components/Loading');
 var PropTypes = React.PropTypes;
 
 function puke (obj) {
@@ -6,11 +7,11 @@ function puke (obj) {
 }
 
 function Forecast (props) {
-  // if (props.isLoading === true) {
-  //   return (
-  //   <Loading />
-  //   )
-  // }
+  if (props.isLoading === true) {
+    return (
+    <Loading />
+    )
+  }
   return (
     <div>
       <h1>Forecast for {props.location} </h1>

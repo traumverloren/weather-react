@@ -34,15 +34,10 @@ var styles = {
   jumbotron: {
     background: 'rgba(25, 25, 25, .3)',
     fontFamily: 'Sacramento',
-    paddingBottom: '20px'
+    paddingBottom: '25px'
   },
 
-  flexContainer: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignItems: 'center',
+  jumbotronInput: {
     fontFamily: 'Quicksand'
   }
 };
