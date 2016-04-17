@@ -10,9 +10,12 @@ function DayForecast (props) {
   var day = getWeekDay(props.dayData.dt);
   var temp = Math.round(props.dayData.temp.day);
   var description = props.dayData.weather[0].description;
+  var icon = "app/images/" + props.dayData.weather[0].icon + ".png";
+
   return (
     <div style={forecastChild}>
       <h4>{day}</h4>
+      <img src={icon}></img>
       <h4>{temp} °F</h4>
       <h5>{description}</h5>
     </div>
@@ -28,7 +31,7 @@ function Forecast (props) {
 
   return (
     <div>
-      <div className="container">
+      <div className="container-fluid">
         <h1 className="text-center" style={{fontFamily: 'Sacramento', fontSize: '60px'}}>{props.location}</h1>
         <div style={forecastParent}>
           {props.forecastData.list.map(function(day) {

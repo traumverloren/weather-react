@@ -44,7 +44,7 @@ var styles = {
     justifyContent: 'center',
     alignItems: 'center',
     width: '220px',
-    height: '220px',
+    height: '280px',
     border: '2px',
     borderStyle: 'dashed',
     borderColor: '#f1c40f',

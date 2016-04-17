@@ -8,11 +8,6 @@ function getWeekDay (unixTime) {
   return Days[dayOfWeek] + ", " + Months[month] + " " + day;
 }
 
-function getIcon (icon) {
-
-}
-
 module.exports = {
-  getWeekDay: getWeekDay,
-  getIcon: getIcon
+  getWeekDay: getWeekDay
 }
