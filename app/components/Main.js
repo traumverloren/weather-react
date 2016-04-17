@@ -1,4 +1,5 @@
 var React = require('react');
+var Link = require('react-router').Link;
 var mainContainer = require('../styles').mainContainer;
 var mainHeader = require('../styles').mainHeader;
 var headerInput = require('../styles').headerInput;
@@ -10,7 +11,9 @@ var Main = React.createClass({
     return (
       <div style={mainContainer}>
         <div style={mainHeader}>
-          <h4 style={{color: 'white'}}>Weather-React</h4>
+          <Link to="/" style={{textDecoration: 'none'}}>
+            <h4 style={{color: 'white'}}>Weather-React</h4>
+          </Link>
           <div style={headerInput}>
             <GetWeatherContainer />
           </div>
