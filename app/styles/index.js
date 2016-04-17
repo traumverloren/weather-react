@@ -31,6 +31,28 @@ var styles = {
     minHeight: '100%'
   },
 
+  forecastParent: {
+    display: 'flex',
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  forecastChild: {
+    display: 'flex',
+    flexFlow: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '220px',
+    height: '220px',
+    border: '2px',
+    borderStyle: 'dashed',
+    borderColor: '#f1c40f',
+    fontFamily: 'Quicksand',
+    padding: '10px',
+    margin: '10px auto 10px auto'
+  },
+
   jumbotron: {
     background: 'rgba(25, 25, 25, .3)',
     fontFamily: 'Sacramento',
