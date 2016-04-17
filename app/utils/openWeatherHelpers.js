@@ -5,14 +5,14 @@ var base_url = "http://api.openweathermap.org/data/2.5/";
 
 var helpers = {
   getCurrentWeather: function (location) {
-    return axios.get(base_url + "weather?q=" + location + "&type=accurate&APPID=" + key)
+    return axios.get(base_url + "weather?q=" + location + "&units=imperial&type=accurate&APPID=" + key)
     .then(function (currentData) {
       return currentData.data;
     })
   },
 
   getForecast: function (location) {
-    return axios.get(base_url + "forecast/daily?q=" + location + "&type=accurate&APPID=" + key + "&cnt=5")
+    return axios.get(base_url + "forecast/daily?q=" + location + "&units=imperial&type=accurate&APPID=" + key + "&cnt=5")
     .then(function (forecastData) {
       return forecastData.data;
     })
