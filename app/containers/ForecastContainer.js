@@ -6,14 +6,17 @@ var ForecastContainer = React.createClass({
 // initialState: isLoading: true,
 // will fetch forecast api data
 // once componentdidmount isLoading: false, forecastData
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
   getInitialState: function() {
     return {
       isLoading: true,
       forecastData: {}
     };
   },
+
   componentDidMount: function() {
-    console.log(this.props);
     openWeatherHelpers.getForecast(this.props.routeParams.city)
       .then(function (forecastData) {
           this.setState({
