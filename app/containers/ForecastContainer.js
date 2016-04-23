@@ -37,14 +37,14 @@ var ForecastContainer = React.createClass({
         }.bind(this));
   },
 
-  handleClick: function(dayForecast) {
+  handleClick: function(dayData) {
     // Here need to add push to router with city query params and state
     // can use routes to pass state and move around application:
     // https://github.com/reactjs/react-router/blob/master/docs/API.md#pushpathnameorloc
     this.context.router.push({
       pathname: '/detail/' + this.props.routeParams.city,
       state: {
-        weather: dayForecast
+        weather: dayData
       }
     })
   },

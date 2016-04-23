@@ -38,6 +38,16 @@ var styles = {
     alignItems: 'center',
   },
 
+  dayDetail: {
+    display: 'flex',
+    flexFlow: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontFamily: 'Quicksand',
+    padding: '10px',
+    margin: '10px auto 10px auto'
+  },
+
   forecastChild: {
     display: 'flex',
     flexFlow: 'column',

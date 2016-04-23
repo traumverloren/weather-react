@@ -9,7 +9,6 @@ var PropTypes = React.PropTypes;
 function DayForecast (props) {
   var day = getWeekDay(props.dayData.dt);
   var temp = Math.round(props.dayData.temp.day);
-  var description = props.dayData.weather[0].description;
   var icon = "app/images/" + props.dayData.weather[0].icon + ".png";
 
   // this is the most inner component, so it has the onClick event that triggers the handleClick
@@ -20,7 +19,6 @@ function DayForecast (props) {
       <h4>{day}</h4>
       <img src={icon}></img>
       <h4>{temp} °F</h4>
-      <h5>{description}</h5>
     </div>
   )
 }
