@@ -16,7 +16,16 @@ var helpers = {
     .then(function (forecastData) {
       return forecastData.data;
     })
+  },
+
+  getGeoLocationForecast: function (lat, lon) {
+    return axios.get(base_url + "forecast/daily?lat=" + lat + "&lon=" + lon + "&units=imperial&type=accurate&APPID=" + key + "&cnt=5")
+    .then(function (forecastData) {
+      return forecastData.data;
+      console.log(forecastData.data);
+    })
   }
+
 };
 
 module.exports = helpers;
