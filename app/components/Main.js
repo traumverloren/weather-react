@@ -7,25 +7,6 @@ var GetWeatherContainer = require('../containers/GetWeatherContainer');
 var openWeatherHelpers = require('../utils/openWeatherHelpers');
 
 var Main = React.createClass({
-
-  componentDidMount: function() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(success, error);
-        function success(position) {
-          var lat = position.coords.latitude;
-          var lon = position.coords.longitude;
-          console.log(position);
-          openWeatherHelpers.getGeoLocationForecast(lat, lon)
-          .then(function (forecastData) {
-              console.log(forecastData)
-            });
-        };
-        function error() {
-
-        };
-      }
-  },
-
   render: function () {
     return (
       <div style={mainContainer}>
