@@ -2,45 +2,53 @@ var React = require('react');
 var homeBg = require('../styles').homeBg;
 var jumbotron = require('../styles').jumbotron;
 var jumbotronInput = require('../styles').jumbotronInput;
+var openWeatherHelpers = require('../utils/openWeatherHelpers');
 
 var GetWeatherContainer = require('../containers/GetWeatherContainer');
 
 var Home = React.createClass({
-  initialState: function () {
-    lat: '',
-    lon: ''
-  }
+  contextTypes: {
+    router: React.PropTypes.object.isRequired
+  },
+
+  getInitialState: function () {
+    return {
+      lat: '',
+      lon: '',
+      geoLocated: false
+    }
+  },
+
   componentWillMount: function () {
+    console.log(this.state);
+
     this.getWeatherGeo();
+    // This is null for some reason....
+    console.log(this.state.geoLocated);
+    if (this.state.geoLocated === true) {
+      openWeatherHelpers.getGeoLocationForecast(this.state.lat, this.state.lon)
+      .then(function (forecastData) {
+        this.setState({
+          lat: '',
+          lon: '',
+          geoLocated: false
+        });
+        console.log(this)
+        this.context.router.push('/forecast/' + forecastData.city.name)
+      });
+    }
   },
 
   getWeatherGeo: function () {
-    console.log(this.state);
-
-
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(success, error);
-    //     function success(position) {
-    //       var lat = position.coords.latitude;
-    //       var lon = position.coords.longitude;
-    //       console.log(position);
-    //       openWeatherHelpers.getGeoLocationForecast(lat, lon)
-    //       .then(function (forecastData) {
-    //           console.log(forecastData)
-    //         });
-    //     };
-    //     function error() {
-    //
-    //     };
-    //   }
-
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
           this.setState({
             lat: position.coords.latitude,
-            lon: position.coords.longitude
+            lon: position.coords.longitude,
+            geoLocated: true
           });
+          console.log(this.state)
         }.bind(this),
       function (error) {
         console.log("ERROR")
