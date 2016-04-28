@@ -20,36 +20,20 @@ var Home = React.createClass({
   },
 
   componentWillMount: function () {
-    console.log(this.state);
-
     this.getWeatherGeo();
-    // This is null for some reason....
-    console.log(this.state.geoLocated);
-    if (this.state.geoLocated === true) {
-      openWeatherHelpers.getGeoLocationForecast(this.state.lat, this.state.lon)
-      .then(function (forecastData) {
-        this.setState({
-          lat: '',
-          lon: '',
-          geoLocated: false
-        });
-        console.log(this)
-        this.context.router.push('/forecast/' + forecastData.city.name)
-      });
-    }
   },
 
   getWeatherGeo: function () {
+    var react = this;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
-          this.setState({
-            lat: position.coords.latitude,
-            lon: position.coords.longitude,
-            geoLocated: true
+          openWeatherHelpers.getGeoLocationForecast(position.coords.latitude, position.coords.longitude)
+          .then(function (forecastData) {
+            console.log(forecastData)
+            react.context.router.push('/forecast/' + forecastData.city.name)
           });
-          console.log(this.state)
-        }.bind(this),
+      },
       function (error) {
         console.log("ERROR")
       })
