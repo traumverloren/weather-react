@@ -13,44 +13,42 @@ var Home = React.createClass({
 
   getInitialState: function () {
     return {
-      lat: '',
-      lon: '',
-      geoLocated: false
+      isLoading: true
     }
   },
 
   componentWillMount: function () {
-    this.getWeatherGeo();
-  },
-
-  getWeatherGeo: function () {
-    var react = this;
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         function (position) {
           openWeatherHelpers.getGeoLocationForecast(position.coords.latitude, position.coords.longitude)
           .then(function (forecastData) {
-            console.log(forecastData)
-            react.context.router.push('/forecast/' + forecastData.city.name)
-          });
-      },
+            this.context.router.push('/forecast/' + forecastData.city.name)
+          }.bind(this));
+      }.bind(this),
       function (error) {
+        // TODO
         console.log("ERROR")
       })
     }
   },
 
   render: function () {
-    return (
-      <div className="container-fluid text-center" style={homeBg}>
-        <div className="jumbotron col-xs-8 text-center" style={jumbotron}>
-          <h1 style={{color: '#f1c40f'}}>Enter a City</h1>
-          <div style={jumbotronInput}>
-            <GetWeatherContainer />
+    console.log(this.state.isLoading);
+    if (this.state.isLoading) {
+      return (<div>Loading...</div>);
+    } else {
+      return (
+        <div className="container-fluid text-center" style={homeBg}>
+          <div className="jumbotron col-xs-8 text-center" style={jumbotron}>
+            <h1 style={{color: '#f1c40f'}}>Enter a City</h1>
+            <div style={jumbotronInput}>
+              <GetWeatherContainer />
+            </div>
           </div>
         </div>
-      </div>
-    )
+      )
+  }
   }
 })
 
